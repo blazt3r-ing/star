@@ -1,0 +1,409 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0d0d0d;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Títulos con la fuente estilo póster */
+h1, h2, h3, .logo {
+    font-family: "Bebas Neue", Arial, sans-serif;
+    letter-spacing: 1px;
+    color: #ffe603;
+}
+
+/* Las palabras dentro de <span> van en blanco */
+h1 span, h2 span, .logo span, h3 span {
+    color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+h2 {
+    font-size: 45px;
+    margin-bottom: 25px;
+}
+
+/* ---------- BOTONES GENERALES ---------- */
+.boton {
+    display: inline-block;
+    background-color: #ffe603;
+    color: #000000;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.boton:hover {
+    background-color: #ffffff;
+    transform: scale(1.03);
+}
+
+/* ---------- MENÚ SUPERIOR ---------- */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #000000;
+    border-bottom: 2px solid #ffe603;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px 30px;
+}
+
+.logo {
+    font-size: 34px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #ffe603;
+}
+
+.btn-carrito-menu {
+    background-color: #ffe603;
+    color: #000000;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-carrito-menu:hover {
+    background-color: #ffffff;
+}
+
+/* ---------- PORTADA ---------- */
+.portada {
+    max-width: none;
+    padding: 180px 60px;
+    text-align: center;
+    background: linear-gradient(rgba(5, 9, 18, 0.75), rgba(18, 14, 5, 0.85)),
+                url("img/14.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.portada h1 {
+    font-size: 90px;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.portada p {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    font-size: 20px;
+    color: #e0e0e0;
+}
+
+/* ---------- TARJETAS DE LIBROS ---------- */
+.contenedor-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.tarjeta {
+    width: 310px;
+    background-color: #ffffff;
+    color: #000000; /* Texto negro para que se lea perfecto sobre el amarillo */
+    border: 2px solid transparent;
+    border-radius: 9px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.tarjeta:hover {
+    border-color: #ffffff;
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(255, 230, 3, 0.2);
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    background-color: #222;
+}
+
+.tarjeta h3 {
+    font-size: 28px;
+    color: #000000;
+    margin-bottom: 4px;
+}
+
+.datos {
+    color: #333333;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.descripcion {
+    font-size: 14px;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.tarjeta-inferior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    padding-top: 12px;
+    margin-top: auto;
+}
+
+.precio {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 28px;
+    color: #000000;
+}
+
+.btn-agregar {
+    background-color: #000000;
+    color: #ffe603;
+    padding: 8px 16px;
+}
+
+.btn-agregar:hover {
+    background-color: #222222;
+    color: #ffffff;
+}
+
+/* ---------- SUSCRÍBETE ---------- */
+.suscribete {
+    background-color: #161616;
+    border: 1px solid #333;
+    border-radius: 12px;
+    text-align: center;
+    padding: 50px 25px;
+    margin-top: 30px;
+}
+
+.suscribete p {
+    max-width: 600px;
+    margin: 0 auto 25px auto;
+    color: #cccccc;
+}
+
+.form-suscripcion {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.form-suscripcion input {
+    padding: 12px 18px;
+    width: 300px;
+    border-radius: 6px;
+    border: 1px solid #444;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+/* ---------- UBICACIÓN / RITUAL ---------- */
+.ubicacion {
+    text-align: center;
+}
+
+.ubicacion p {
+    max-width: 650px;
+    margin: auto;
+    font-size: 18px;
+    color: #dddddd;
+}
+
+/* ---------- PANEL DEL CARRITO ---------- */
+.overlay-carrito {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 199;
+    display: none;
+}
+
+.overlay-carrito.activo {
+    display: block;
+}
+
+.panel-carrito {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 360px;
+    max-width: 90%;
+    height: 100%;
+    background-color: #121212;
+    border-left: 2px solid #ffe603;
+    z-index: 200;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.3s ease;
+}
+
+.panel-carrito.activo {
+    right: 0;
+}
+
+.carrito-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+}
+
+.carrito-header h3 {
+    font-size: 30px;
+}
+
+.btn-cerrar {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.lista-carrito {
+    flex: 1;
+    overflow-y: auto;
+    margin: 20px 0;
+}
+
+.carrito-vacio {
+    color: #888888;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.item-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e1e1e;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 4px solid #ffe603;
+}
+
+.item-info h4 {
+    font-size: 15px;
+    color: #ffe603;
+    margin-bottom: 4px;
+}
+
+.item-info p {
+    font-size: 13px;
+    color: #cccccc;
+}
+
+.btn-eliminar-item {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.carrito-footer {
+    border-top: 1px solid #333;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.carrito-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffe603;
+    margin-bottom: 5px;
+}
+
+.btn-comprar {
+    width: 100%;
+    text-align: center;
+}
+
+.btn-vaciar {
+    background: none;
+    border: 1px solid #555;
+    color: #aaaaaa;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-vaciar:hover {
+    border-color: #ff4d4d;
+    color: #ff4d4d;
+}
+
+/* ---------- PIE DE PÁGINA ---------- */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #050505;
+    color: #ffe603;
+    border-top: 1px solid #222;
+    font-size: 14px;
+    }

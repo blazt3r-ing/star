@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang= "es" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIBRESTAR</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ========== 1. MENÚ ========== -->
+    <header>
+        <div class="logo">LIBRERÍA <span>STAR</span></div>
+
+        <nav>
+            <a href="#PORTADA">LSTAR</a>
+            <a href="#IMAGENES">NOVEDADES</a>
+            <a href="#SUSCRIBETE">SUSCRÍBETE</a>
+            <a href="#UBI">RITUAL DIARIO</a>
+            <!-- Botón para abrir el carrito -->
+            <button class="btn-carrito-menu" onclick="toggleCarrito()">
+                🛒 Carrito (<span id="contador-carrito">0</span>)
+            </button>
+        </nav>
+    </header>
+
+    <!-- ========== PANEL LATERAL DEL CARRITO ========== -->
+    <div id="overlay-carrito" class="overlay-carrito" onclick="toggleCarrito()"></div>
+    <aside id="panel-carrito" class="panel-carrito">
+        <div class="carrito-header">
+            <h3>Tu Carrito <span>Star</span></h3>
+            <button class="btn-cerrar" onclick="toggleCarrito()">✕</button>
+        </div>
+
+        <!-- Aquí se agregan los libros dinámicamente -->
+        <div id="lista-carrito" class="lista-carrito">
+            <p class="carrito-vacio">Tu carrito está vacío por ahora.</p>
+        </div>
+
+        <div class="carrito-footer">
+            <div class="carrito-total">
+                <span>Total:</span>
+                <span id="total-carrito">$0.00</span>
+            </div>
+            <button class="boton btn-comprar" onclick="finalizarCompra()">Finalizar compra</button>
+            <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+        </div>
+    </aside>
+
+    <!-- ========== 2. PORTADA ========== -->
+    <section id="PORTADA" class="portada">
+        <h1>LIBRERÍA <span>STAR</span></h1>
+        <p>Tu rincón de inspiración, tu próxima gran historia</p>
+        <a href="#IMAGENES" class="boton">Ver catálogo</a>
+    </section>
+
+    <!-- ========== 3. CATÁLOGO DE LIBROS ========== -->
+    <section id="IMAGENES">
+        <h2>Novedades <span>Literarias</span></h2>
+
+        <div class="contenedor-tarjetas">
+
+            <!-- Tarjeta 1 -->
+            <div class="tarjeta">
+                <!-- ✏️ Cambia la ruta en src="" por la foto de tu libro -->
+                <img src="img/images (1).jpg" alt="Portada de libro 1">
+                <h3>Powerless</h3>
+                <p class="datos">Alfaguara · Tapa blanda</p>
+                <p class="descripcion">En un reino donde no tener poderes es pecado mortal, Paedyn Gray finge ser una Élite.
+Tras salvar al príncipe Kai Azer —el ejecutor encargado de cazar a los de su clase—, es obligada a competir en un torneo letal de magia. Sin dones, deberá usar su astucia para sobrevivir a las pruebas y a su peligrosa atracción por el chico que tiene la orden de matarla</p>
+                <div class="tarjeta-inferior">
+                    <span class="precio">$529.00</span>
+                    <button class="boton btn-agregar" onclick="agregarAlCarrito('Powerless', 529)">
+                        + Agregar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="tarjeta">
+                <img src="img/2.jpg" alt="Portada de libro 2">
+                <h3>Damián: Un secreto oscuro y perverso</h3>
+                <p class="datos">Misterio y Thriller · Pasta dura</p>
+                <p class="descripcion">Detrás de la fachada perfecta de Damián Fox se esconde un monstruo obsesivo y peligroso.
+Cuando Padme comienza a descubrir los secretos oscuros y perversos de su pasado, se da cuenta de que ya es muy tarde para escapar: él la ha elegido, y no planea dejarla ir. Una historia de dark romance donde el amor se confunde con la obsesión.</p>
+                <div class="tarjeta-inferior">
+                    <span class="precio">$807.00</span>
+                    <button class="boton btn-agregar" onclick="agregarAlCarrito('Damián: Un secreto oscuro y perverso', 807)">
+                        + Agregar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="tarjeta">
+                <img src="img/3.jpg" alt="Portada de libro 3">
+                <h3>Lout of Counts Family (Novel) Vol. 1</h3>
+                <p class="datos">Ficción y Fantasía· Tapa blanda</p>
+                <p class="descripcion">Al despertar como Cale Henituse, el borracho "basurero" de una familia noble, Kim Roksu sabe que su destino es ser golpeado por el héroe.
+Decidido a evitar el dolor y asegurar una cómoda vida de flojera, empieza a recolectar poderes antiguos para protegerse. Sin embargo, sus intentos de evitar el peligro solo logran atraer a aliados poderosos —como un dragón bebé— arrastrándolo al centro de las heroicas batallas de las que tanto huye</p>
+                <div class="tarjeta-inferior">
+                    <span class="precio">$413.00</span>
+                    <button class="boton btn-agregar" onclick="agregarAlCarrito('Lout of Counts Family Vol. 1', 413)">
+                        + Agregar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tarjeta 4 -->
+            <div class="tarjeta">
+                <img src="img/4.jpg" alt="Portada de libro 4">
+                <h3>Indigno de ser humano</h3>
+                <p class="datos">Literatura y ensayo · Tapa blanda</p>
+                <p class="descripcion">Yozo Oba es un joven incapaz de comprender a los seres humanos y a su sociedad.
+Para ocultar su terror y encajar, adopta la máscara de un bufón alegre. Sin embargo, este vacío emocional lo arrastra a una espiral autodestructiva de adicciones, intentos de suicidio y aislamiento. La obra maestra de Osamu Dazai es una desgarradora autopsia existencial sobre la alienación y el dolor de sentirse indigno de la humanidad.</p>
+                <div class="tarjeta-inferior">
+                    <span class="precio">$434.00</span>
+                    <button class="boton btn-agregar" onclick="agregarAlCarrito('Indigno de ser humano', 434)">
+                        + Agregar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tarjeta 5 -->
+            <div class="tarjeta">
+                <img src="img/5.jpg" alt="Portada de libro 5">
+                <h3>Harry Potter y la Piedra Filosofal</h3>
+                <p class="datos">Fantasía, Magos y brujos· Tapa dura</p>
+                <p class="descripcion">Un niño huérfano descubre en su undécimo cumpleaños que es un mago.
+Harry Potter deja atrás los maltratos de sus tíos para ingresar al Colegio Hogwarts de Magia y Hechicería. Mientras aprende hechizos y hace sus primeros amigos verdaderos, descubre que el mago oscuro que asesinó a sus padres, Lord Voldemort, busca un objeto místico oculto en el castillo: la Piedra Filosofal, la cual otorga la inmortalidad. Harry y sus amigos deberán arriesgar sus vidas para detenerlo.</p>
+                <div class="tarjeta-inferior">
+                    <span class="precio">$549.00</span>
+                    <button class="boton btn-agregar" onclick="agregarAlCarrito('Harry Potter y la Piedra Filosofal', 549)">
+                        + Agregar
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========== 4. SUSCRÍBETE ========== -->
+    <section id="SUSCRIBETE" class="suscribete">
+        <h2>Únete al <span>Club de Lectura</span></h2>
+        <p>Suscríbete a nuestro mundo y obtén 10% de descuento en tu primera compra. Elige tus géneros favoritos y mantente al tanto de cada lanzamiento.</p>
+        
+        <form class="form-suscripcion" onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte a Librería Star!');">
+            <input type="email" placeholder="Escribe tu correo electrónico..." required>
+            <button type="submit" class="boton">Suscribirme</button>
+        </form>
+    </section>
+
+    <!-- ========== 5. SUCURSALES / RITUAL ========== -->
+    <section id="UBI" class="ubicacion">
+        <h2>Ritual <span>Diario</span></h2>
+        <p>Con un buen libro, hoy todo es posible. Visítanos en nuestra sucursal principal de lunes a domingo de 9:00 a 21:00 hrs.</p>
+    </section>
+
+    <!-- ========== 6. PIE DE PÁGINA ========== -->
+    <footer>
+        <p>LIBRERÍA STAR © 2026 — Todos los derechos reservados</p>
+    </footer>
+
+    <!-- ========== LÓGICA DEL CARRITO (JAVASCRIPT) ========== -->
+    <script>
+        let carrito = [];
+
+        function toggleCarrito() {
+            document.getElementById('panel-carrito').classList.toggle('activo');
+            document.getElementById('overlay-carrito').classList.toggle('activo');
+        }
+
+        function agregarAlCarrito(titulo, precio) {
+            // Buscamos si el libro ya está en el carrito
+            const libroExistente = carrito.find(item => item.titulo === titulo);
+
+            if (libroExistente) {
+                libroExistente.cantidad++;
+            } else {
+                carrito.push({ titulo: titulo, precio: precio, cantidad: 1 });
+            }
+
+            actualizarCarritoUI();
+        }
+
+        function eliminarDelCarrito(index) {
+            carrito.splice(index, 1);
+            actualizarCarritoUI();
+        }
+
+        function vaciarCarrito() {
+            carrito = [];
+            actualizarCarritoUI();
+        }
+
+        function finalizarCompra() {
+            if (carrito.length === 0) {
+                alert('Tu carrito está vacío. ¡Agrega algún libro primero!');
+                return;
+            }
+            alert('¡Gracias por tu compra en Librería Star! Tu pedido está en proceso.');
+            vaciarCarrito();
+            toggleCarrito();
+        }
+
+        function actualizarCarritoUI() {
+            const lista = document.getElementById('lista-carrito');
+            const contador = document.getElementById('contador-carrito');
+            const totalElemento = document.getElementById('total-carrito');
+
+            lista.innerHTML = '';
+            let total = 0;
+            let totalArticulos = 0;
+
+            if (carrito.length === 0) {
+                lista.innerHTML = '<p class="carrito-vacio">Tu carrito está vacío por ahora.</p>';
+            } else {
+                carrito.forEach((item, index) => {
+                    const subtotal = item.precio * item.cantidad;
+                    total += subtotal;
+                    totalArticulos += item.cantidad;
+
+                    const div = document.createElement('div');
+                    div.className = 'item-carrito';
+                    div.innerHTML = `
+                        <div class="item-info">
+                            <h4>${item.titulo}</h4>
+                            <p>$${item.precio}.00 x ${item.cantidad} = <strong>$${subtotal}.00</strong></p>
+                        </div>
+                        <button class="btn-eliminar-item" onclick="eliminarDelCarrito(${index})">🗑️</button>
+                    `;
+                    lista.appendChild(div);
+                });
+            }
+
+            contador.textContent = totalArticulos;
+            totalElemento.textContent = `$${total.toFixed(2)}`;
+        }
+    </script>
+
+</body>
+</html>
